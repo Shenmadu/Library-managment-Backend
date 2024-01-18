@@ -4,6 +4,7 @@ import org.example.dto.Book;
 import org.example.service.BookSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,7 @@ public class BookController {
     @Autowired
     BookSevice sevice;
 @PostMapping
-    public void addBook(Book book){
+    public void addBook(@RequestBody Book book){
         sevice.addBook(book);
     }
 
