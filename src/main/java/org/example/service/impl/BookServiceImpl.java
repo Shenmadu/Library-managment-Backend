@@ -6,7 +6,7 @@ import org.example.entity.BookEntity;
 import org.example.repository.BookRepository;
 import org.example.service.BookSevice;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +34,6 @@ public class BookServiceImpl implements BookSevice {
 
     @Override
     public List<BookEntity> getBooks() {
-        return (List<BookEntity>) bookRepository.findAll();
+        return bookRepository.findAll();
     }
 }
