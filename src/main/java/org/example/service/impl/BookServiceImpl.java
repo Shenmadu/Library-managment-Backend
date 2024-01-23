@@ -1,5 +1,6 @@
 package org.example.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.example.dto.Book;
 import org.example.entity.BookEntity;
 import org.example.repository.BookRepository;
@@ -9,10 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor
 public class BookServiceImpl implements BookSevice {
-    @Autowired
-    BookRepository bookRepository;
+
+    final BookRepository bookRepository;
 
     ModelMapper mapper;
 
@@ -26,5 +30,10 @@ public class BookServiceImpl implements BookSevice {
         BookEntity entity = mapper.map(book, BookEntity.class);
         bookRepository.save(entity);
 
+    }
+
+    @Override
+    public List<BookEntity> getBooks() {
+        return (List<BookEntity>) bookRepository.findAll();
     }
 }

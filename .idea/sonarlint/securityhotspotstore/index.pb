@@ -7,8 +7,6 @@ W
 'src/main/java/org/example/dto/Book.java,c\f\cf5f7fdc65c0132cb67ebc451e34b4f11f6c412c
 h
 8src/main/java/org/example/controller/BookController.java,8\6\863c0ee3b55362ba745c83019ab8ca6f55e08955
-g
-7src/main/java/org/example/service/impl/BookService.java,0\a\0a35d1dc7da0a34825cbe04e7bc4d7a43ec555a2
 a
 1src/main/java/org/example/service/BookSevice.java,2\9\298e5a838527b2db88e25dd0bf559c09ec8bfbb0
 k
@@ -17,3 +15,9 @@ h
 8src/main/java/org/example/repository/BookRepository.java,b\7\b7783d39ca81aa027ce3a0f700c9f233ca4aa9da
 `
 0src/main/java/org/example/entity/BookEntity.java,8\e\8e7bab507d9e728ef6cf98c958018520dba04ab5
+Å
+Q.idea/sonarlint/securityhotspotstore/b/7/b7783d39ca81aa027ce3a0f700c9f233ca4aa9da,5\2\52476059c84c989423e422874ee16020bae66ee6
+Å
+Q.idea/sonarlint/securityhotspotstore/8/e/8e7bab507d9e728ef6cf98c958018520dba04ab5,6\0\607916c79de2ec6f23bbe68565ffedfd7272d172
+w
+G.idea/sonarlint/issuestore/b/7/b7783d39ca81aa027ce3a0f700c9f233ca4aa9da,a\e\ae124a7dc6446cf500bf7ca6ecaad73136e823d3
