@@ -14,15 +14,24 @@ import org.springframework.web.bind.annotation.*;
 public class BookController {
 
    final BookSevice sevice;
-@PostMapping("/add")
-@ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addBook(@RequestBody Book book){
         sevice.addBook(book);
     }
 
     @GetMapping("/get")
     public Iterable<BookEntity> getBooks(){
-    return sevice.getBooks();
+        return sevice.getBooks();
+    }
+    @DeleteMapping("/{id}")
+    public String deleteBook(@PathVariable Long id){
+        if(sevice.deleteBook(id)){
+            return "Deleted";
+        }else{
+            return "Not deleted";
+        }
+
     }
 
 }

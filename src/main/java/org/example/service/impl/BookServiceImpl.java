@@ -27,7 +27,7 @@ public class BookServiceImpl implements BookSevice {
 
     @Override
     public void addBook(Book book) {
-        BookEntity entity = mapper.map(book, BookEntity.class);
+        BookEntity entity = mapper.map(book, BookEntity.class);//orm using model mapper
         bookRepository.save(entity);
 
     }
@@ -35,5 +35,15 @@ public class BookServiceImpl implements BookSevice {
     @Override
     public List<BookEntity> getBooks() {
         return bookRepository.findAll();
+    }
+
+    @Override
+    public boolean deleteBook(Long id) {
+        if(bookRepository.existsById(id)){
+            bookRepository.deleteById(id);
+            return true;
+        }else{
+            return false;
+        }
     }
 }

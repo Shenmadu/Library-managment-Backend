@@ -7,4 +7,6 @@ public interface BookSevice {
      void addBook(Book book);
     Iterable<BookEntity> getBooks();
 
+    boolean deleteBook(Long id);
+
 }
