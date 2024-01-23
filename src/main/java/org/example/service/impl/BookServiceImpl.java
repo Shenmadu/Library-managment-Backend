@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,19 +25,16 @@ public class BookServiceImpl implements BookSevice {
     public void setup(){
         this.mapper=new ModelMapper();
     }
-
     @Override
     public void addBook(Book book) {
         BookEntity entity = mapper.map(book, BookEntity.class);//orm using model mapper
         bookRepository.save(entity);
 
     }
-
     @Override
     public List<BookEntity> getBooks() {
         return bookRepository.findAll();
     }
-
     @Override
     public boolean deleteBook(Long id) {
         if(bookRepository.existsById(id)){
@@ -45,5 +43,10 @@ public class BookServiceImpl implements BookSevice {
         }else{
             return false;
         }
+    }
+    @Override
+    public Book getBookById(Long id) {
+        Optional<BookEntity> byId = bookRepository.findById(id);
+        return mapper.map(byId, Book.class);
     }
 }
