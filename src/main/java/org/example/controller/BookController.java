@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.example.dto.Book;
 import org.example.entity.BookEntity;
 import org.example.service.BookSevice;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,5 +36,4 @@ public class BookController {
         return sevice.getBookById(id);
 
     }
-
 }
