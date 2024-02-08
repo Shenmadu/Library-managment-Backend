@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/book")
 @RequiredArgsConstructor
+@CrossOrigin
 public class BookController {
 
    final BookSevice sevice;
@@ -26,14 +27,14 @@ public class BookController {
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> deleteBook(@PathVariable Long id){   //json convert variable
-        return sevice.deleteBook(id) ?
-                ResponseEntity.ok("Deleted"):
-                ResponseEntity.notFound().build();
+    public String deleteBook(@PathVariable Long id){   //json convert variable
+        sevice.deleteBook(id);
+         return "Deleted";
     }
     @GetMapping("search/{id}")
     public Book getBookById(@PathVariable Long id){
         return sevice.getBookById(id);
 
     }
+
 }
