@@ -5,8 +5,9 @@ import org.example.dto.Book;
 import org.example.entity.BookEntity;
 import org.example.service.BookSevice;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/book")
@@ -35,6 +36,10 @@ public class BookController {
     public Book getBookById(@PathVariable Long id){
         return sevice.getBookById(id);
 
+    }
+    @PostMapping("/add-list")
+    public void addBookList(@RequestBody List<Book> bookList){
+        sevice.addBookList(bookList);
     }
 
 }
